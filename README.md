@@ -11,4 +11,4 @@ Grupo B05
 | [Noelia Díaz-Alejo Alejo](mailto:noelia.diaz14@alu.uclm.es) | NoeliaOwo | |
 | [Francisco Javier Luna Ortiz](mailto:fcojavier.luna@alu.uclm.es) aka *Paco Moon* | Lunao01 | |
 
-[Word Requisitos y casos de uso](https://pruebasaluuclm-my.sharepoint.com/:w:/r/personal/antonio_campallo_alu_uclm_es/Documents/Requisitos%20funcionales.docx?d=wd6648c8385e94dfc934a9c5e8f410f73&csf=1&web=1&e=EIBH5k)
+[Word Requisitos y casos de uso](https://pruebasaluuclm-my.sharepoint.com/:w:/r/personal/daniel_ayuso2_alu_uclm_es/_layouts/15/Doc.aspx?sourcedoc=%7B92B19DF7-7AE6-45D9-8A88-DD8D02D989A8%7D&file=ISO2%20-%20Planificaci%u00f3n%20-%20Lab.docx&action=default&mobileredirect=true)
