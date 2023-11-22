@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <packaging>pom</packaging>
+  <version>0.0.0</version>
+
+  <groupId>iso.b05</groupId>
+  <artifactId>parent-project</artifactId>
+  <name>Proyecto Laboratorio ISo2 23/24</name>
+  <description>Grupo de aplicaciones para el manejo de asistencia a eventos</description>
+
+  <developers>
+    <developer>
+      <name>Samuel Espejo Gil</name>
+    </developer>
+    <developer>
+      <name>Noelia Díaz-Alejo Alejo</name>
+    </developer>
+    <developer>
+      <name>Marcelo Chinarro Cabrero</name>
+    </developer>
+    <developer>
+      <name>Antonio Campallo Gómez</name>
+    </developer>
+    <developer>
+      <name>Daniel Ayuso Del Campo</name>
+    </developer>
+    <developer>
+      <name>Francisco Javier Luna Ortiz</name>
+    </developer>
+  </developers>
+
+  <dependencies>
+     <dependency>
+         <groupId>org.junit.jupiter</groupId>
+         <artifactId>junit-jupiter-api</artifactId>
+         <version>5.6.0</version>
+         <scope>test</scope>
+     </dependency>
+     <dependency>
+         <groupId>org.junit.jupiter</groupId>
+         <artifactId>junit-jupiter-params</artifactId>
+         <version>5.6.0</version>
+         <scope>test</scope>
+     </dependency>
+     <dependency>
+         <groupId>org.junit.jupiter</groupId>
+         <artifactId>junit-jupiter-engine</artifactId>
+         <version>5.6.0</version>
+         <scope>test</scope>
+     </dependency>
+  </dependencies>
+
+  <modules>
+    <module>server</module>
+    <module>ge_asistencia</module>
+    <module>od_asistencia</module>
+    <module>ae_asistencia</module>
+    <module>oi_asistencia</module>
+  </modules>
+</project>
