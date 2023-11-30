@@ -14,31 +14,48 @@ public class EventoDocente {
 	 * Fecha y Hora que representan el final del evento
 	 */
 	private Date _fin;
-
-	public void setInicio(Date aInicio) {
+	private Presencialidad _tipo;
+	
+	public EventoDocente(Date ainicio, Date afin, Presencialidad atipo) {
 		// TODO: Test
-		if (aInicio.before(new Date())) {
+		super();
+		this.setInicio(ainicio);
+		this.setFin(afin);
+		this.setTipo(atipo);
+	}
+
+	public void setInicio(Date ainicio) {
+		// TODO: Test
+		if (ainicio.before(new Date())) {
 			// TODO: Crear paquete execptions
 			throw new RuntimeException("La fecha introducida debe ser posterior al dia actual");
 		}
-		this._inicio = aInicio;
+		this._inicio = ainicio;
 	}
 
 	public Date getInicio() {
 		return this._inicio;
 	}
 
-	public void setFin(Date aFin) {
+	public void setFin(Date afin) {
 		// TODO: Test
-		if (aFin.before(this._inicio)) {
+		if (afin.before(this._inicio)) {
 			// TODO: Crear paquete execptions
 			throw new RuntimeException("El fin del evento debe ser depues del inicio");
 		}
-		this._fin = aFin;
+		this._fin = afin;
 	}
 
 	public Date getFin() {
 		return this._fin;
+	}
+
+	public Presencialidad getTipo() {
+		return _tipo;
+	}
+
+	public void setTipo(Presencialidad atipo) {
+		this._tipo = atipo;
 	}
 
 }
