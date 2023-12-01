@@ -1,4 +1,4 @@
-# Ignore Vim backup files
-*~
-*.swp
+# Ignore Visual Paradigm backup files
+*.vpp.bak_*
+.*.vpp.lck
 
