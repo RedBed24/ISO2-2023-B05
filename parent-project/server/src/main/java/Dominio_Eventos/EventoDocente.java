@@ -17,7 +17,6 @@ public class EventoDocente {
 	private Presencialidad _tipo;
 	
 	public EventoDocente(Date ainicio, Date afin, Presencialidad atipo) {
-		// TODO: Test
 		super();
 		this.setInicio(ainicio);
 		this.setFin(afin);
@@ -25,9 +24,7 @@ public class EventoDocente {
 	}
 
 	public void setInicio(Date ainicio) {
-		// TODO: Test
 		if (ainicio.before(new Date())) {
-			// TODO: Crear paquete execptions
 			throw new RuntimeException("La fecha introducida debe ser posterior al dia actual");
 		}
 		this._inicio = ainicio;
@@ -38,10 +35,8 @@ public class EventoDocente {
 	}
 
 	public void setFin(Date afin) {
-		// TODO: Test
 		if (afin.before(this._inicio)) {
-			// TODO: Crear paquete execptions
-			throw new RuntimeException("El fin del evento debe ser depues del inicio");
+			throw new RuntimeException("El fin del evento debe ser despues del inicio");
 		}
 		this._fin = afin;
 	}

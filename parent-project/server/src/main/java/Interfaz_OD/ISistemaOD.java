@@ -13,7 +13,7 @@ public class ISistemaOD {
 	 */
 	public void WaitNewConnection(int aPort) {
 		// TODO: Test
-		if (aPort < 0 || aPort < 65535) {
+		if (aPort < 0 || aPort > 65535) {
 			throw new RuntimeException("El puerto no está en el rango válido");
 		}
 		throw new UnsupportedOperationException();
