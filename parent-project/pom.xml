@@ -10,6 +10,11 @@
   <name>Proyecto Laboratorio ISo2 23/24</name>
   <description>Grupo de aplicaciones para el manejo de asistencia a eventos</description>
 
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+  </properties>
+
   <developers>
     <developer>
       <name>Samuel Espejo Gil</name>
