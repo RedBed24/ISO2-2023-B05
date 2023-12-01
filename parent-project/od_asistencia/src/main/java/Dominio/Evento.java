@@ -1,5 +1,7 @@
 package Dominio;
 
+import java.util.Date;
+
 public class Evento {
 	private Date _inicio;
 	private Date _fin;
