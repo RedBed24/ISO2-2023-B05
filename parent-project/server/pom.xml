@@ -12,4 +12,12 @@
   <version>0.0.0</version>
   <name>server</name>
   <url>http://maven.apache.org</url>
+
+  <dependencies>
+    <dependency>
+      <groupId>iso.b05.eventos</groupId>
+      <artifactId>events</artifactId>
+      <version>0.0.0</version>
+    </dependency>
+  </dependencies>
 </project>
