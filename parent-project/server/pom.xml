@@ -13,6 +13,8 @@
   <name>server</name>
   <url>http://maven.apache.org</url>
 
+  <packaging>jar</packaging>
+
   <dependencies>
     <dependency>
       <groupId>iso.b05.eventos</groupId>
