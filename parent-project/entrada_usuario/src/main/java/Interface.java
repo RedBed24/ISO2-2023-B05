@@ -1,4 +1,4 @@
-package b05.iso2.b05.testing.p3;
+package entrada_usuario.src.main/java;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
