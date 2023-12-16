@@ -1,5 +1,6 @@
 package entrada_usuario.src.main/java;
 
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
@@ -22,12 +23,13 @@ public class Interface {
      * @return 
  */
     public static int getInt(){
-	try{
-	    return TECLADO.nextInt();
-	}catch(NumberFormatException e){
-	    System.out.println("Error: La cadena no es un valor válido.");
+	while(true){
+	    try{
+		return TECLADO.nextInt();
+	    }catch(NumberFormatException e){
+		System.out.println("Error: La cadena no es un valor válido.");
+	    }
 	}
-	return getInt();
     }
  
     
@@ -37,12 +39,13 @@ public class Interface {
      * @return 
  */
     public static double getDouble(){
-	try{
-	    return TECLADO.nextDouble();
-	}catch(NumberFormatException e){
-	    System.out.println("Error: La cadena no es un valor válido.");
+	while(true){
+	    try{
+		return TECLADO.nextDouble();
+	    }catch(NumberFormatException e){
+		System.out.println("Error: La cadena no es un valor válido.");
+	    }
 	}
-	return getDouble();
     }
     
     
@@ -52,17 +55,18 @@ public class Interface {
      * @return 
  */
     public static double getPositiveDouble(){
-	try{
-	    double x = TECLADO.nextDouble();
-	    while(x <= 0){
-		System.out.println("Inserte un valor positivo:");
-		x = TECLADO.nextDouble();
+	while(true){
+	    try{
+		double x = TECLADO.nextDouble();
+		while(x <= 0){
+		    System.out.println("Inserte un valor positivo:");
+		    x = TECLADO.nextDouble();
+		}
+		return x;
+	    }catch(NumberFormatException e){
+		System.out.println("Error: La cadena no es un valor válido.");
 	    }
-	    return x;
-	}catch(NumberFormatException e){
-	    System.out.println("Error: La cadena no es un valor válido.");
 	}
-        return getPositiveDouble();
     }
     
     
@@ -82,20 +86,21 @@ public class Interface {
      * @return 
  */
     public static int getPhoneNumber(){	
-	 try {
-	    int phoneNumber = TECLADO.nextInt();
-	    /*Control de formato*/
-	    while(phoneNumber <= 0 && String.valueOf(phoneNumber).length() != 9){
-		System.out.println("Inserte un formato válido para el número de teléfono:");
-		phoneNumber = TECLADO.nextInt();
+	while(true){
+	    try {
+		int phoneNumber = TECLADO.nextInt();
+		/*Control de formato*/
+		while(phoneNumber <= 0 && String.valueOf(phoneNumber).length() != 9){
+		    System.out.println("Inserte un formato válido para el número de teléfono:");
+		    phoneNumber = TECLADO.nextInt();
+		}
+
+		return phoneNumber;
+
+	    } catch (NumberFormatException e) {
+		System.out.println("Error: La cadena no es un valor válido.");
 	    }
-	
-	    return phoneNumber;
-            
-        } catch (NumberFormatException e) {
-            System.out.println("Error: La cadena no es un valor válido.");
-        }
-	return getPhoneNumber();
+	}
     }
     
     
@@ -106,13 +111,14 @@ public class Interface {
 */
     public static LocalDate getDate() {
         DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        try {
-            String date = TECLADO.nextLine();
-            return LocalDate.parse(date, formatoFecha);
-        } catch (Exception e) {
-            System.out.println("Error al convertir la fecha. Asegúrate de ingresar el formato correcto.");
-        }
-	return getDate();
+        while(true){
+	    try {
+		String date = TECLADO.nextLine();
+		return LocalDate.parse(date, formatoFecha);
+	    } catch (Exception e) {
+		System.out.println("Error al convertir la fecha. Asegúrate de ingresar el formato correcto.");
+	    }
+	}
     }
     
 }
