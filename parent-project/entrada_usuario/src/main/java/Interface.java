@@ -12,14 +12,14 @@ import java.util.Scanner;
  * El objetivo de esta clase es implementar distintos métodos
  * para desarrollar la comunicación y petición de datos
  * con el usuario de la aplicación.
- * IMPORTANTE: Cada método devuelve sí o sí un valor válido
- * o salta excepción.
+ * IMPORTANTE: Cada método devuelve sí o sí un valor válido.
  */
 public class Interface {
     public static Scanner TECLADO = new Scanner(System.in);
     
 /**
- * Leer valor entero
+ * Leer valor entero. Si se introduce mal el valor por consola, se vuelve a pedir hasta 
+ * que se devuelve un valor válido.
      * @return 
  */
     public static int getInt(){
@@ -35,7 +35,8 @@ public class Interface {
     
     
 /**
- * Leer valor double
+ * Leer valor double. Si se introduce mal el valor por consola, se vuelve a pedir hasta 
+ * que se devuelve un valor válido.
      * @return 
  */
     public static double getDouble(){
@@ -51,7 +52,8 @@ public class Interface {
     
     
 /**
- * Leer valor double positivo mayor que 0
+ * Leer valor double positivo mayor que 0. Si se introduce mal el valor por consola, se vuelve a pedir hasta 
+ * que se devuelve un valor válido.
      * @return 
  */
     public static double getPositiveDouble(){
@@ -72,7 +74,8 @@ public class Interface {
     
     
 /**
- * Leer valor string
+ * Leer valor string. Si se introduce mal el valor por consola, se vuelve a pedir hasta 
+ * que se devuelve un valor válido.
      * @return 
  */
     public static String getString(){
@@ -82,7 +85,8 @@ public class Interface {
     
     
 /**
- * Leer número de teléfono (9 dígitos)
+ * Leer número de teléfono (9 dígitos). Si se introduce mal el valor por consola, se vuelve a pedir hasta 
+ * que se devuelve un valor válido.
      * @return 
  */
     public static int getPhoneNumber(){	
@@ -106,7 +110,8 @@ public class Interface {
     
     
 /**
-* Leer fecha día/mes/año 
+* Leer fecha día/mes/año. Si se introduce mal el valor por consola, se vuelve a pedir hasta 
+ * que se devuelve un valor válido.
      * @return 
 */
     public static LocalDate getDate() {
