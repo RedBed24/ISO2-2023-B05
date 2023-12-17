@@ -5,6 +5,7 @@ import java.io.PrintStream;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 
 /**
@@ -28,8 +29,9 @@ public class Input {
 		while (true) {
 			try {
 				return TECLADO.nextInt();
-			} catch (NumberFormatException e) {
+			} catch (InputMismatchException e) {
 				PANTALLA.println("Error: La cadena no es un valor válido.");
+				TECLADO.nextLine();
 			}
 		}
 	}
