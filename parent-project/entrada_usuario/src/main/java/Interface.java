@@ -15,7 +15,7 @@ import java.util.Scanner;
  * IMPORTANTE: Cada método devuelve sí o sí un valor válido.
  */
 public class Interface {
-    public static Scanner TECLADO = new Scanner(System.in);
+    private static Scanner TECLADO = new Scanner(System.in);
     
 /**
  * Leer valor entero. Si se introduce mal el valor por consola, se vuelve a pedir hasta 
