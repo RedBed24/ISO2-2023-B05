@@ -45,7 +45,7 @@ public class Input {
 		while (true) {
 			try {
 				return TECLADO.nextDouble();
-			} catch (NumberFormatException e) {
+			} catch (InputMismatchException e) {
 				PANTALLA.println("Error: La cadena no es un valor válido.");
 			}
 		}
@@ -65,7 +65,7 @@ public class Input {
 					x = TECLADO.nextDouble();
 				}
 				return x;
-			} catch (NumberFormatException e) {
+			} catch (InputMismatchException e) {
 				PANTALLA.println("Error: La cadena no es un valor válido.");
 			}
 		}
@@ -95,7 +95,7 @@ public class Input {
 					phoneNumber = TECLADO.nextInt();
 				}
 				return phoneNumber;
-			} catch (NumberFormatException e) {
+			} catch (InputMismatchException e) {
 				PANTALLA.println("Error: La cadena no es un valor válido.");
 			}
 		}
@@ -117,5 +117,74 @@ public class Input {
 			}
 		}
 	}
+	
+	/**
+	 * Leer un correo electrónico válido
+	 * @return 
+	 */
+	public static String getMail() {
+	    while (true) {
+		try {
+		    String mail = TECLADO.nextLine();
+		    /*Control de formato*/
+		    while(mail.indexOf('@') != -1){
+			PANTALLA.println("Inserte un formato válido para el correo:");
+			mail = TECLADO.nextLine();
+		    }
+		    return mail;
+		    } catch (Exception e) {
+			PANTALLA.println("Error: La cadena no es un valor válido.");
+		    }
+	    }
+	}
+	
+	
+	
+	/**
+	 * Leer la nacionalidad
+	 * @return 
+	 */
+	public static String getNacionalidad() {
+	    while (true) {
+		try {
+			return TECLADO.nextLine();
+		    } catch (Exception e) {
+			PANTALLA.println("Error: La cadena no es un valor válido.");
+		    }
+	    }
+	}
+
+	
+	/**
+	 * Leer el certificado de inglés
+	 * @return 
+	 */
+	public static String getEnglishCertification() {
+	    while (true) {
+		try {
+			return TECLADO.nextLine();
+		    } catch (Exception e) {
+			PANTALLA.println("Error: La cadena no es un valor válido.");
+		    }
+	    }
+	}		
+	
+	
+	/**
+	 * Leer la titulación
+	 * @return 
+	 */
+	public static String getTitration() {
+	    while (true) {
+		try {
+			return TECLADO.nextLine();
+		    } catch (Exception e) {
+			PANTALLA.println("Error: La cadena no es un valor válido.");
+		    }
+	    }
+	}		
+	
+	
+	
 	
 }
