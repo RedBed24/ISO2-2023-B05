@@ -15,22 +15,34 @@ import java.util.InputMismatchException;
  * para desarrollar la comunicación y petición de datos
  * con el usuario de la aplicación.
  * IMPORTANTE: Cada método devuelve sí o sí un valor válido.
+ *
+ * Sirve como entrada interactiva con el usuario
  */
 public class Input {
-	private static Scanner TECLADO = new Scanner(System.in);
-	private static PrintStream PANTALLA = new PrintStream(System.out);
+	private Scanner teclado;
+	private PrintStream pantalla;
+
+	/**
+	 * Crea una instancia a la que se le podrán pedir los valores
+	 * @param entrada Proveedor de datos
+	 * @param salida_errores Dónde se mostrarán los errores
+	 */
+	public Input(Scanner entrada, PrintStream salida_errores) {
+		teclado = entrada;
+		pantalla = salida_errores;
+	}
 
 	/**
 	 * Leer valor string. Si se introduce mal el valor por consola, se vuelve a pedir hasta 
 	 * que se devuelve un valor válido.
 	 * @return 
 	 */
-	public static String getString(){
+	public String getString(){
 		String cadena;
 		do {
-			cadena = TECLADO.nextLine();
+			cadena = teclado.nextLine();
 			if (cadena.length() < 1) {
-				PANTALLA.println("Error: La cadena debe tener al menos un caracter.");
+				pantalla.println("Error: La cadena debe tener al menos un caracter.");
 			}
 		} while (cadena.length() < 1);
 		return cadena;
@@ -41,13 +53,13 @@ public class Input {
 	 * que se devuelve un valor válido.
 	 * @return 
 	 */
-	public static int getInt() {
+	public int getInt() {
 		while (true) {
 			try {
-				return TECLADO.nextInt();
+				return teclado.nextInt();
 			} catch (InputMismatchException e) {
-				PANTALLA.println("Error: La cadena no es un valor válido.");
-				TECLADO.nextLine();
+				pantalla.println("Error: La cadena no es un valor válido.");
+				teclado.nextLine();
 			}
 		}
 	}
@@ -57,12 +69,12 @@ public class Input {
 	 * que se devuelve un valor válido.
 	 * @return 
 	 */
-	public static double getDouble() {
+	public double getDouble() {
 		while (true) {
 			try {
-				return TECLADO.nextDouble();
+				return teclado.nextDouble();
 			} catch (InputMismatchException e) {
-				PANTALLA.println("Error: La cadena no es un valor válido.");
+				pantalla.println("Error: La cadena no es un valor válido.");
 			}
 		}
 	}
@@ -72,10 +84,10 @@ public class Input {
 	 * que se devuelve un valor válido.
 	 * @return
 	 */
-	public static double getPositiveDouble() {
+	public double getPositiveDouble() {
 		double x = getDouble();
 		while (x <= 0) {
-			PANTALLA.println("Inserte un valor positivo:");
+			pantalla.println("Inserte un valor positivo:");
 			x = getDouble();
 		}
 		return x;
@@ -86,11 +98,11 @@ public class Input {
 	 * que se devuelve un valor válido.
 	 * @return
 	 */
-	public static int getPhoneNumber() {
+	public int getPhoneNumber() {
 		int phoneNumber = getInt();
 		/*Control de formato*/
 		while(phoneNumber <= 0 && String.valueOf(phoneNumber).length() != 9){
-			PANTALLA.println("Inserte un formato válido para el número de teléfono:");
+			pantalla.println("Inserte un formato válido para el número de teléfono:");
 			phoneNumber = getInt();
 		}
 		return phoneNumber;
@@ -101,14 +113,14 @@ public class Input {
 	 * que se devuelve un valor válido.
 	 * @return 
 	 */
-	public static LocalDate getDate() {
+	public LocalDate getDate() {
 		DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		while (true) {
 			try {
-				String date = TECLADO.nextLine();
+				String date = teclado.nextLine();
 				return LocalDate.parse(date, formatoFecha);
 			} catch (IllegalArgumentException e) {
-				PANTALLA.println("Error al convertir la fecha. Asegúrate de ingresar el formato correcto (dd/MM/yyyy).");
+				pantalla.println("Error al convertir la fecha. Asegúrate de ingresar el formato correcto (dd/MM/yyyy).");
 			}
 		}
 	}
@@ -117,18 +129,18 @@ public class Input {
 	 * Leer un correo electrónico válido
 	 * @return 
 	 */
-	public static String getMail() {
+	public String getMail() {
 		while (true) {
 			try {
-				String mail = TECLADO.nextLine();
+				String mail = teclado.nextLine();
 				/*Control de formato*/
 				while(mail.indexOf('@') == -1){
-					PANTALLA.println("Inserte un formato válido para el correo:");
-					mail = TECLADO.nextLine();
+					pantalla.println("Inserte un formato válido para el correo:");
+					mail = teclado.nextLine();
 				}
 				return mail;
 			} catch (Exception e) {
-				PANTALLA.println("Error: La cadena no es un valor válido.");
+				pantalla.println("Error: La cadena no es un valor válido.");
 			}
 		}
 	}
