@@ -4,8 +4,8 @@ package user.cli;
 import java.io.PrintStream;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
-import java.util.InputMismatchException;
 
 
 /**
@@ -101,7 +101,7 @@ public class Input {
 	public int getPhoneNumber() {
 		int phoneNumber = getInt();
 		/*Control de formato*/
-		while(phoneNumber <= 0 && String.valueOf(phoneNumber).length() != 9){
+		while(phoneNumber <= 0 || String.valueOf(phoneNumber).length() != 9){
 			pantalla.println("Inserte un formato válido para el número de teléfono:");
 			phoneNumber = getInt();
 		}
@@ -119,7 +119,7 @@ public class Input {
 			try {
 				String date = getString();
 				return LocalDate.parse(date, formatoFecha);
-			} catch (IllegalArgumentException e) {
+			} catch (DateTimeParseException e) {
 				pantalla.println("Error al convertir la fecha. Asegúrate de ingresar el formato correcto (dd/MM/yyyy).");
 			}
 		}
@@ -130,19 +130,14 @@ public class Input {
 	 * @return 
 	 */
 	public String getMail() {
-		while (true) {
-			try {
-				String mail = getString();
-				/*Control de formato*/
-				while(mail.indexOf('@') == -1){
-					pantalla.println("Inserte un formato válido para el correo:");
-					mail = getString();
-				}
-				return mail;
-			} catch (Exception e) {
-				pantalla.println("Error: La cadena no es un valor válido.");
-			}
+		String mail = getString();
+		/*Control de formato*/
+		while(mail.indexOf('@') == -1){
+			pantalla.println("Inserte un formato válido para el correo:");
+			mail = getString();
 		}
+		return mail;
 	}
+	
 }
 
