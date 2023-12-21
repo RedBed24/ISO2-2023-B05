@@ -75,6 +75,28 @@ public class InputTest {
 		}
 	}
 	
+	public void test_getInt_falla1() {
+		String entrada = "Hola\n";
+		String salida_esperada = "Hola";
+
+		try {
+			File f = new File("tmp.txt");
+			f.createNewFile();
+
+			Input input = new Input(new Scanner(entrada), new PrintStream(f));
+
+			assertEquals(salida_esperada, input.getInt());
+
+			Scanner salida_errores = new Scanner(f);
+
+			assertEquals("Error: La cadena debe tener al menos un caracter.", salida_errores.nextLine());
+
+			f.delete();
+		} catch (FileNotFoundException e) {
+		} catch (IOException e) {
+		}
+	}
+	
 	
 }
 

@@ -1,1 +1,0 @@
-Error: La cadena debe tener al menos un caracter.
