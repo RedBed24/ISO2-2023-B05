@@ -68,23 +68,17 @@ public class Input {
 	}
 
 	/**
-	 * Leer valor double positivo mayor que 0. Si se introduce mal el valor por consola, se vuelve a pedir hasta 
+	 * Leer valor double positivo mayor que 0. Si se introduce mal el valor por consola, se vuelve a pedir hasta
 	 * que se devuelve un valor válido.
-	 * @return 
+	 * @return
 	 */
 	public static double getPositiveDouble() {
-		while (true) {
-			try{
-				double x = TECLADO.nextDouble();
-				while (x <= 0) {
-					PANTALLA.println("Inserte un valor positivo:");
-					x = TECLADO.nextDouble();
-				}
-				return x;
-			} catch (InputMismatchException e) {
-				PANTALLA.println("Error: La cadena no es un valor válido.");
-			}
+		double x = getDouble();
+		while (x <= 0) {
+			PANTALLA.println("Inserte un valor positivo:");
+			x = getDouble();
 		}
+		return x;
 	}
 
 	/**
