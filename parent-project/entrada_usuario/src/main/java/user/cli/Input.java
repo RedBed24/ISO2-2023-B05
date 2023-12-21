@@ -107,8 +107,8 @@ public class Input {
 			try {
 				String date = TECLADO.nextLine();
 				return LocalDate.parse(date, formatoFecha);
-			} catch (Exception e) {
-				PANTALLA.println("Error al convertir la fecha. Asegúrate de ingresar el formato correcto.");
+			} catch (IllegalArgumentException e) {
+				PANTALLA.println("Error al convertir la fecha. Asegúrate de ingresar el formato correcto (dd/MM/yyyy).");
 			}
 		}
 	}
