@@ -118,19 +118,19 @@ public class Input {
 	 * @return 
 	 */
 	public static String getMail() {
-	    while (true) {
-		try {
-		    String mail = TECLADO.nextLine();
-		    /*Control de formato*/
-		    while(mail.indexOf('@') != -1){
-			PANTALLA.println("Inserte un formato válido para el correo:");
-			mail = TECLADO.nextLine();
-		    }
-		    return mail;
-		    } catch (Exception e) {
-			PANTALLA.println("Error: La cadena no es un valor válido.");
-		    }
-	    }
+		while (true) {
+			try {
+				String mail = TECLADO.nextLine();
+				/*Control de formato*/
+				while(mail.indexOf('@') == -1){
+					PANTALLA.println("Inserte un formato válido para el correo:");
+					mail = TECLADO.nextLine();
+				}
+				return mail;
+			} catch (Exception e) {
+				PANTALLA.println("Error: La cadena no es un valor válido.");
+			}
+		}
 	}
 }
 
