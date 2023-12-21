@@ -40,7 +40,7 @@ public class Input {
 	public String getString(){
 		String cadena;
 		do {
-			cadena = getString();
+			cadena = teclado.nextLine();
 			if (cadena.length() < 1) {
 				pantalla.println("Error: La cadena debe tener al menos un caracter.");
 			}
