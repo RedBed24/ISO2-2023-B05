@@ -21,6 +21,22 @@ public class Input {
 	private static PrintStream PANTALLA = new PrintStream(System.out);
 
 	/**
+	 * Leer valor string. Si se introduce mal el valor por consola, se vuelve a pedir hasta 
+	 * que se devuelve un valor válido.
+	 * @return 
+	 */
+	public static String getString(){
+		String cadena;
+		do {
+			cadena = TECLADO.nextLine();
+			if (cadena.length() < 1) {
+				PANTALLA.println("Error: La cadena debe tener al menos un caracter.");
+			}
+		} while (cadena.length() < 1);
+		return cadena;
+	}
+
+	/**
 	 * Leer valor entero. Si se introduce mal el valor por consola, se vuelve a pedir hasta 
 	 * que se devuelve un valor válido.
 	 * @return 
@@ -72,40 +88,18 @@ public class Input {
 	}
 
 	/**
-	 * Leer valor string. Si se introduce mal el valor por consola, se vuelve a pedir hasta 
+	 * Leer número de teléfono (9 dígitos). Si se introduce mal el valor por consola, se vuelve a pedir hasta
 	 * que se devuelve un valor válido.
-	 * @return 
-	 */
-	public static String getString(){
-		String cadena;
-		do {
-			cadena = TECLADO.nextLine();
-			if (cadena.length() < 1) {
-				PANTALLA.println("Error: La cadena debe tener al menos un caracter.");
-			}
-		} while (cadena.length() < 1);
-		return cadena;
-	} 
-
-	/**
-	 * Leer número de teléfono (9 dígitos). Si se introduce mal el valor por consola, se vuelve a pedir hasta 
-	 * que se devuelve un valor válido.
-	 * @return 
+	 * @return
 	 */
 	public static int getPhoneNumber() {
-		while (true) {
-			try {
-				int phoneNumber = TECLADO.nextInt();
-				/*Control de formato*/
-				while(phoneNumber <= 0 && String.valueOf(phoneNumber).length() != 9){
-					PANTALLA.println("Inserte un formato válido para el número de teléfono:");
-					phoneNumber = TECLADO.nextInt();
-				}
-				return phoneNumber;
-			} catch (InputMismatchException e) {
-				PANTALLA.println("Error: La cadena no es un valor válido.");
-			}
+		int phoneNumber = getInt();
+		/*Control de formato*/
+		while(phoneNumber <= 0 && String.valueOf(phoneNumber).length() != 9){
+			PANTALLA.println("Inserte un formato válido para el número de teléfono:");
+			phoneNumber = getInt();
 		}
+		return phoneNumber;
 	}
 
 	/**
