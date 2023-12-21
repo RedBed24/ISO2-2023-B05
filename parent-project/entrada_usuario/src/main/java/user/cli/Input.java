@@ -40,7 +40,7 @@ public class Input {
 	public String getString(){
 		String cadena;
 		do {
-			cadena = teclado.nextLine();
+			cadena = getString();
 			if (cadena.length() < 1) {
 				pantalla.println("Error: La cadena debe tener al menos un caracter.");
 			}
@@ -71,8 +71,8 @@ public class Input {
 	public double getDouble() {
 		while (true) {
 			try {
-				return teclado.nextDouble();
-			} catch (InputMismatchException e) {
+				return Double.parseDouble(getString());
+			} catch (NumberFormatException e) {
 				pantalla.println("Error: La cadena no es un valor válido.");
 			}
 		}
@@ -116,7 +116,7 @@ public class Input {
 		DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		while (true) {
 			try {
-				String date = teclado.nextLine();
+				String date = getString();
 				return LocalDate.parse(date, formatoFecha);
 			} catch (IllegalArgumentException e) {
 				pantalla.println("Error al convertir la fecha. Asegúrate de ingresar el formato correcto (dd/MM/yyyy).");
@@ -131,11 +131,11 @@ public class Input {
 	public String getMail() {
 		while (true) {
 			try {
-				String mail = teclado.nextLine();
+				String mail = getString();
 				/*Control de formato*/
 				while(mail.indexOf('@') == -1){
 					pantalla.println("Inserte un formato válido para el correo:");
-					mail = teclado.nextLine();
+					mail = getString();
 				}
 				return mail;
 			} catch (Exception e) {
