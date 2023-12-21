@@ -57,4 +57,26 @@ public class InputTest {
 		} catch (IOException e) {
 		}
 	}
+	
+	public void test_getInt() {
+		String entrada = "1\n";
+		int salida_esperada = 1;
+		
+		try {
+			File f = new File("tmp.txt");
+			f.createNewFile();
+
+			Input input = new Input(new Scanner(entrada), new PrintStream(f));
+			assertEquals(salida_esperada, input.getInt());
+		
+			f.delete();
+		} catch (FileNotFoundException e) {
+		} catch (IOException e) {
+		}
+	}
+	
+	
 }
+
+
+

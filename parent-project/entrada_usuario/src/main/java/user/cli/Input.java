@@ -32,6 +32,7 @@ public class Input {
 		pantalla = salida_errores;
 	}
 
+	
 	/**
 	 * Leer valor string. Si se introduce mal el valor por consola, se vuelve a pedir hasta 
 	 * que se devuelve un valor válido.
