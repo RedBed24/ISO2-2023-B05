@@ -56,10 +56,9 @@ public class Input {
 	public int getInt() {
 		while (true) {
 			try {
-				return teclado.nextInt();
-			} catch (InputMismatchException e) {
+				return Integer.parseInt(getString());
+			} catch (NumberFormatException e) {
 				pantalla.println("Error: La cadena no es un valor válido.");
-				teclado.nextLine();
 			}
 		}
 	}
