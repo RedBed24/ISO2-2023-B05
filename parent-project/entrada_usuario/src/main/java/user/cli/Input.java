@@ -19,7 +19,7 @@ import java.util.InputMismatchException;
 public class Input {
 	private static Scanner TECLADO = new Scanner(System.in);
 	private static PrintStream PANTALLA = new PrintStream(System.out);
-	
+
 	/**
 	 * Leer valor entero. Si se introduce mal el valor por consola, se vuelve a pedir hasta 
 	 * que se devuelve un valor válido.
@@ -50,7 +50,7 @@ public class Input {
 			}
 		}
 	}
-	
+
 	/**
 	 * Leer valor double positivo mayor que 0. Si se introduce mal el valor por consola, se vuelve a pedir hasta 
 	 * que se devuelve un valor válido.
@@ -70,16 +70,23 @@ public class Input {
 			}
 		}
 	}
-	
+
 	/**
 	 * Leer valor string. Si se introduce mal el valor por consola, se vuelve a pedir hasta 
 	 * que se devuelve un valor válido.
 	 * @return 
 	 */
 	public static String getString(){
-		return TECLADO.nextLine();
+		String cadena;
+		do {
+			cadena = TECLADO.nextLine();
+			if (cadena.length() < 1) {
+				PANTALLA.println("Error: La cadena debe tener al menos un caracter.");
+			}
+		} while (cadena.length() < 1);
+		return cadena;
 	} 
-	
+
 	/**
 	 * Leer número de teléfono (9 dígitos). Si se introduce mal el valor por consola, se vuelve a pedir hasta 
 	 * que se devuelve un valor válido.
@@ -100,7 +107,7 @@ public class Input {
 			}
 		}
 	}
-	
+
 	/**
 	 * Leer fecha día/mes/año. Si se introduce mal el valor por consola, se vuelve a pedir hasta 
 	 * que se devuelve un valor válido.
@@ -117,7 +124,7 @@ public class Input {
 			}
 		}
 	}
-	
+
 	/**
 	 * Leer un correo electrónico válido
 	 * @return 
@@ -137,54 +144,5 @@ public class Input {
 		    }
 	    }
 	}
-	
-	
-	
-	/**
-	 * Leer la nacionalidad
-	 * @return 
-	 */
-	public static String getNacionalidad() {
-	    while (true) {
-		try {
-			return TECLADO.nextLine();
-		    } catch (Exception e) {
-			PANTALLA.println("Error: La cadena no es un valor válido.");
-		    }
-	    }
-	}
-
-	
-	/**
-	 * Leer el certificado de inglés
-	 * @return 
-	 */
-	public static String getEnglishCertification() {
-	    while (true) {
-		try {
-			return TECLADO.nextLine();
-		    } catch (Exception e) {
-			PANTALLA.println("Error: La cadena no es un valor válido.");
-		    }
-	    }
-	}		
-	
-	
-	/**
-	 * Leer la titulación
-	 * @return 
-	 */
-	public static String getTitration() {
-	    while (true) {
-		try {
-			return TECLADO.nextLine();
-		    } catch (Exception e) {
-			PANTALLA.println("Error: La cadena no es un valor válido.");
-		    }
-	    }
-	}		
-	
-	
-	
-	
 }
+
