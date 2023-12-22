@@ -9,7 +9,7 @@
   </parent>
 
   <artifactId>entrada_usuario</artifactId>
-  <version>0.0.0</version>
+  <version>0.1.1</version>
   <name>entrada_usuario</name>
   <description>Módulo para la interacción con el usuario.</description>
 
