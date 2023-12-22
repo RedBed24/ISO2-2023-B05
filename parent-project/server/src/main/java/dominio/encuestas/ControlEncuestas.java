@@ -1,11 +1,11 @@
-package dominioGestionEncuestasDocentesServidor;
+package dominio.encuestas;
 
 /**
  * Clase de dominio que se encarga de la creación y gestión de eventos como pida el usuario, además de mandar órdenes a la comunicación con el servidor
  */
-public class ControlEncuestaDocente {
+public class ControlEncuestas {
 
-	public boolean crearEncuestaDocente(String id) {
+	public boolean crearEncuesta(String id) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -17,11 +17,11 @@ public class ControlEncuestaDocente {
 		throw new UnsupportedOperationException();
 	}
 
-	public boolean borrarEncuestaDocente(String id) {
+	public boolean borrarEncuesta(String id) {
 		throw new UnsupportedOperationException();
 	}
 
-	public EncuestaDocente[] listarEncuestasDocentes(String filtroRegEx) {
+	public Encuesta[] listarEncuestas(String filtroRegEx, String tipo) {
 		throw new UnsupportedOperationException();
 	}
 }
