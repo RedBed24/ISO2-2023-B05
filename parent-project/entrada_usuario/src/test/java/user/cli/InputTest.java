@@ -60,6 +60,8 @@ public class InputTest {
 
 			assertEquals("Error: La cadena debe tener al menos un caracter.", salida_errores.nextLine());
 
+			salida_errores.close();
+
 			f.delete();
 		} catch (FileNotFoundException e) {
 		} catch (IOException e) {
@@ -111,6 +113,8 @@ public class InputTest {
 			Scanner salida_errores = new Scanner(f);
 
 			assertEquals("Error: La cadena no es un valor válido.", salida_errores.nextLine());
+
+			salida_errores.close();
 
 			f.delete();
 		} catch (FileNotFoundException e) {
@@ -164,6 +168,8 @@ public class InputTest {
 
 			assertEquals("Error: La cadena no es un valor válido.", salida_errores.nextLine());
 
+			salida_errores.close();
+
 			f.delete();
 		} catch (FileNotFoundException e) {
 		} catch (IOException e) {
@@ -216,6 +222,8 @@ public class InputTest {
 
 			assertEquals("Inserte un valor positivo:", salida_errores.nextLine());
 
+			salida_errores.close();
+
 			f.delete();
 		} catch (FileNotFoundException e) {
 		} catch (IOException e) {
@@ -266,6 +274,8 @@ public class InputTest {
 			Scanner salida_errores = new Scanner(f);
 
 			assertEquals("Inserte un formato válido para el número de teléfono:", salida_errores.nextLine());
+
+			salida_errores.close();
 		
 			f.delete();
 		} catch (FileNotFoundException e) {
@@ -295,6 +305,8 @@ public class InputTest {
 			Scanner salida_errores = new Scanner(f);
 
 			assertEquals("Inserte un formato válido para el número de teléfono:", salida_errores.nextLine());
+
+			salida_errores.close();
 		
 			f.delete();
 		} catch (FileNotFoundException e) {
@@ -348,6 +360,8 @@ public class InputTest {
 			Scanner salida_errores = new Scanner(f);
 
 			assertEquals("Error al convertir la fecha. Asegúrate de ingresar el formato correcto (dd/MM/yyyy).", salida_errores.nextLine());
+
+			salida_errores.close();
 		
 			f.delete();
 			
@@ -403,6 +417,8 @@ public class InputTest {
 			Scanner salida_errores = new Scanner(f);
 
 			assertEquals("Inserte un formato válido para el correo:", salida_errores.nextLine());
+
+			salida_errores.close();
 	
 			f.delete();
 		} catch (FileNotFoundException e) {
