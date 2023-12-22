@@ -8,7 +8,6 @@ import java.time.format.DateTimeFormatter;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class InputTest {
